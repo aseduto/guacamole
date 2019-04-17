@@ -4,7 +4,15 @@
     <authorize username="alessandro" password="PASSWORD">
         <connection name="ip">
             <protocol>ssh</protocol>
-            <param name="hostname">172.17.0.3</param>
+            <param name="hostname">172.17.0.2</param>
+            <param name="port">22</param>
+            <param name="username">root</param>
+            <param name="password">root</param>
+        </connection>
+
+        <connection name="test">
+            <protocol>ssh</protocol>
+            <param name="hostname">172.17.0.2</param>
             <param name="port">22</param>
             <param name="username">root</param>
             <param name="password">root</param>
