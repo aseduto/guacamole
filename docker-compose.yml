@@ -1,10 +1,10 @@
-version: '3'
+version: '3.7'
 networks:
   guacamole:
 
 
 services:
-  webapi:
+  guacamole:
     image: guacamole
     environment:
     - NAME=VALUE
@@ -25,11 +25,11 @@ services:
     networks:
     - guacamole
     expose:
-    - "30478"
-    - "18081"
+    - "443"
+    - "1808"
     ports:
-    - "4443:30478"
-    - "18081:18081"
+    - "443:443"
+    - "180:1808"
     deploy:
       replicas: 1
     depends_on:

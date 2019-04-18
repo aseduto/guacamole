@@ -3,7 +3,7 @@ static_resources:
   - address:
       socket_address:
         address: 0.0.0.0
-        port_value: 8081
+        port_value: 443 
     filter_chains:
       - filters:
         - name: envoy.http_connection_manager
@@ -23,20 +23,20 @@ static_resources:
                     prefix: "/"
                   route:
                     prefix_rewrite: "/"
-                    cluster: webapi
+                    cluster: guacamole
             http_filters:
             - name: envoy.router
               config: {}
         tls_context: 
           common_tls_context:
             tls_certificates: 
-              certificate_chain: {filename: "./openid.pem"}
-              private_key: {filename: "./openid-key.pem"}
+              certificate_chain: {filename: "/tls/admin.mediagoom.com.crt"}
+              private_key: {filename: "/tls/admin.mediagoom.com.key"}
             validation_context:
-              trusted_ca: {filename: "./ca.pem"}
+              trusted_ca: {filename: "/envoy2/ca.pem"}
           require_client_certificate: true
   clusters:
-  - name: guacamole
+  - name: guacamole 
     connect_timeout: 0.25s
     type: LOGICAL_DNS
     lb_policy: round_robin
@@ -50,6 +50,6 @@ admin:
   address:
     socket_address:
       address: 0.0.0.0
-      port_value: 18082
+      port_value: 1808
 
 

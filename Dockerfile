@@ -46,7 +46,7 @@ RUN set -x  \
 
 WORKDIR ${GUACAMOLE_HOME}
 
-COPY user-mapping.xml ./
+#COPY user-mapping.xml ./
 
 # Link FreeRDP to where guac expects it to be
 RUN ln -s /usr/local/lib/freerdp /usr/lib/x86_64-linux-gnu/freerdp || exit 0
