@@ -1,0 +1,48 @@
+version: '3'
+networks:
+  guacamole:
+
+
+services:
+  webapi:
+    image: guacamole
+    environment:
+    - NAME=VALUE
+    expose: 
+    - "8080"
+    networks:
+    - guacamole
+    volumes:
+      - type: bind
+        source: /storage/guacamole
+        target: /app/guacamole
+    restart: unless-stopped
+  gateway:
+    image: envoyproxy/envoy-alpine:v1.10.0
+    command: envoy -c /envoy2/envoy.yaml -l info
+    environment:
+    - NAME=value
+    networks:
+    - guacamole
+    expose:
+    - "30478"
+    - "18081"
+    ports:
+    - "4443:30478"
+    - "18081:18081"
+    deploy:
+      replicas: 1
+    depends_on:
+    - guacamole
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /storage/envoy
+        target: /envoy2
+      - type: bind
+        source: /storage/tls
+        target: /tls
+
+  
+
+

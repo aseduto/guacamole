@@ -36,13 +36,13 @@ static_resources:
               trusted_ca: {filename: "./ca.pem"}
           require_client_certificate: true
   clusters:
-  - name: webapi
+  - name: guacamole
     connect_timeout: 0.25s
-    type: static
+    type: LOGICAL_DNS
     lb_policy: round_robin
     hosts:
     - socket_address:
-        address: 172.17.0.3
+        address: guacamole
         port_value: 8080
     
 admin:
