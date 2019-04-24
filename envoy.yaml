@@ -17,7 +17,7 @@ static_resources:
               virtual_hosts:
               - name: service
                 domains:
-                - "*"
+                - "admin.mediagoom.com"
                 routes:
                 - match:
                     prefix: "/"
