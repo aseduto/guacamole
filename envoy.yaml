@@ -17,7 +17,7 @@ static_resources:
               virtual_hosts:
               - name: service
                 domains:
-                - "admin.mediagoom.com"
+                - "*"
                 routes:
                 - match:
                     prefix: "/"
@@ -30,10 +30,10 @@ static_resources:
         tls_context: 
           common_tls_context:
             tls_certificates: 
-              certificate_chain: {filename: "/tls/admin.mediagoom.com.crt"}
-              private_key: {filename: "/tls/admin.mediagoom.com.key"}
+              certificate_chain: {filename: "/tls/server.pem"}
+              private_key: {filename: "/tls/server.key.pem"}
             validation_context:
-              trusted_ca: {filename: "/envoy2/ca.pem"}
+              trusted_ca: {filename: "/tls/ca.pem"}
           require_client_certificate: true
   clusters:
   - name: guacamole 

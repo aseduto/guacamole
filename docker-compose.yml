@@ -26,10 +26,8 @@ services:
     - guacamole
     expose:
     - "443"
-    - "1808"
     ports:
     - "443:443"
-    - "180:1808"
     deploy:
       replicas: 1
     depends_on:

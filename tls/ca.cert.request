@@ -1,0 +1,29 @@
+[ req ]
+default_bits = 2048
+prompt = no
+default_md = sha256
+req_extensions = req_ext
+distinguished_name = dn
+
+[ dn ]
+C = it
+ST = Turin
+L = Turin
+O = system:masters
+CN = sample-ca
+
+[ req_ext ]
+subjectAltName = @alt_names
+
+[ alt_names ]
+DNS.1 = sample-ca
+DNS.2 = sample-ca.cluster.local
+IP.1 = 192.168.56.164
+IP.2 = 10.96.0.1
+
+[ v3_ext ]
+authorityKeyIdentifier=keyid,issuer:always
+basicConstraints=CA:FALSE
+keyUsage=keyEncipherment,dataEncipherment
+extendedKeyUsage=clientAuth
+subjectAltName=@alt_names
