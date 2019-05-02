@@ -5,17 +5,10 @@ default_md = sha256
 distinguished_name = dn
 
 [ dn ]
-C = it
-ST = Turin
-L = Turin
-O = azure
-CN = client-auth 
+CN = guacamole_client 
 
 
 [ v3_ext ]
-authorityKeyIdentifier=keyid,issuer:always
-basicConstraints=CA:FALSE
-keyUsage=keyEncipherment,dataEncipherment
-extendedKeyUsage=clientAuth
+
 
 

@@ -84,13 +84,19 @@ echo "Generate Client Cert"
 
 cert "client"
 
+openssl pkcs12 -in client.pem -inkey client.key.pem -export -out merged.pfx
+
 ```
 
 4. Now put safely away your ca.kye.pem. 
 5. On any machine you want to connect to your guacamole server trust ca.pem
 6. Copy server.key.pem server.pem ca.pem to your guacamole server in /storage/tls
 7. Copy envoy.yaml to /storage/envoy
-8. run docker-compose up
+```bash
+mkdir -p /storage/envoy
+cp envoy.yaml /storage/envoy
+```
+8. run ```docker-compose -d up```
 
 
 
