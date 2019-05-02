@@ -2,7 +2,7 @@
 
 Following are the steps to create a vm to use as jump station using azure [az command line](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest).
 
-Use your bash shall. You can change the variable to better reflect your environment.
+Use your bash shell. You can change the variable to better reflect your environment.
 
 ```bash
 
