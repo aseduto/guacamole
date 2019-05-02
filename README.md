@@ -2,6 +2,8 @@
 
 A very basic guacamole single container server. 
 
+With this container you can use a machine to control and access all other. To prepare your host you can find an example [here](/aseduto/guacamole/blob/master/azure.md).
+
 Let you startup a guacamole server just editing one file.
 
 To get start:
@@ -15,6 +17,7 @@ cp ./user-mapping.xml /storage/guacamole
 docker build --tag guacamole .
 ```
 Use your favorite editor to add to /storage/guacamole/user-mapping.xml all the host you want to get access to.
+You can follow the [Guacamole](https://guacamole.apache.org/doc/gug/configuring-guacamole.html) documentation to edit the file.
 
 Just start the container:
 
