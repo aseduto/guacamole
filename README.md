@@ -2,7 +2,7 @@
 
 A very basic guacamole single container server. 
 
-With this container you can use a machine to control and access all other. To prepare your host you can find an example [here](/aseduto/guacamole/blob/master/azure.md).
+With this container you can use a machine to control and access all other. To prepare your host you can find an example [here](azure.md).
 
 Let you startup a guacamole server just editing one file.
 
