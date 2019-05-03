@@ -34,12 +34,6 @@ az network lb rule create --resource-group ${GROUP} --lb-name "lb${VM}" \
     --frontend-port 22 \
     --backend-port 22 
 	
-az network lb rule create --resource-group ${GROUP} --lb-name "lb${VM}" \
-	--frontend-ip-name "iphttp${VM}" \
-    --name "lbhttp${VM}rule" \
-    --protocol tcp \
-    --frontend-port 80 \
-    --backend-port 80
 
 az network lb rule create --resource-group ${GROUP} --lb-name "lb${VM}" \
     --frontend-ip-name "iphttp${VM}" \
