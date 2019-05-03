@@ -22,8 +22,6 @@ az network public-ip create --resource-group ${GROUP} --name "iphttp${VM}"
 az network nic create --resource-group ${GROUP} --name "nic${VM}" --vnet-name ${VNET} --subnet ${SUBNET}
 az network nic ip-config create --name "ipconfig${VM}" --resource-group ${GROUP}  --nic-name "nic${VM}" --vnet-name ${VNET} --subnet ${SUBNET}
 
-
-
 az network lb create --resource-group ${GROUP} --name "lb${VM}" --backend-pool-name "pool${VM}" --public-ip-address "iphttp${VM}"
 az network lb frontend-ip create --resource-group ${GROUP} --name "ipssh${VM}" --lb-name "lb${VM}" --public-ip-address "ipssh${VM}"
 
@@ -49,7 +47,6 @@ az network lb rule create --resource-group ${GROUP} --lb-name "lb${VM}" \
     --protocol tcp \
     --frontend-port 443 \
     --backend-port 443 	
-
 
 az vm create --name ${VM} --resource-group ${GROUP} --image Debian --ssh-key-value @.ssh/guacamole.pub --admin-username guacamole \
 --use-unmanaged-disk --storage-account ${STORAGE} --public-ip-address "" --nics "nic${VM}" --size Standard_B1LS
