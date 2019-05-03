@@ -4,6 +4,10 @@ Following are the steps to create a vm to use as jump station using azure [az co
 
 Use your bash shell. You can change the variable to better reflect your environment.
 
+If you do not have an ssh key generate it with:
+
+```ssh-keygen -f ~/.ssh/guacamole -t dsa```
+
 ```bash
 
 GROUP="aseduto"
